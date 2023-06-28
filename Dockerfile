@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM docker:20.10.8-dind-alpine3.13
 
 RUN apk add python3 curl && \
   wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-366.0.0-linux-x86_64.tar.gz && \
