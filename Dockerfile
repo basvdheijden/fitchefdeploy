@@ -1,4 +1,4 @@
-FROM docker:20.10.8-dind-alpine3.13
+FROM docker:27.3.1-dind-alpine3.20
 
 RUN apk add python3 python3-dev gcc musl-dev py3-pip curl rsync git nodejs npm && \
   wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz && \
