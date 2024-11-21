@@ -1,3 +1,5 @@
+FROM python:3.14.0a2-alpine3.20 AS python-source
+
 FROM docker:27.3.1-dind-alpine3.20
 
 RUN apk add python3 python3-dev gcc musl-dev py3-pip curl rsync git nodejs npm && \
@@ -11,3 +13,5 @@ RUN apk add python3 python3-dev gcc musl-dev py3-pip curl rsync git nodejs npm &
   gcloud components install kubectl docker-credential-gcr && \
   curl --location -o /usr/local/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && \
   chmod +x /usr/local/bin/jq;
+
+COPY --from=python-source /usr/local/bin/python3 /usr/local/bin/python3
