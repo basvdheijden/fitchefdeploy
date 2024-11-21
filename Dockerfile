@@ -126,7 +126,7 @@ RUN set -eux; \
     ln -svT "$src" "/usr/local/bin/$dst"; \
   done
 
-RUN apk add gcc musl-dev curl rsync git nodejs npm && \
+RUN apk add mysql-client gcc musl-dev curl rsync git nodejs npm && \
   npm install -g yarn && \
   wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz && \
   tar -zxf google-cloud-* && \
